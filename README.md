@@ -18,10 +18,10 @@ All addresses are stored in `.txt` files with CIDRs, where each range is on a ne
 
 ### Facebook (Meta)
 
-- IPv4: https://raw.githubusercontent.com/yoshigev/ipranges/main/facebook/ipv4.txt
-- IPv4 (merged): https://raw.githubusercontent.com/yoshigev/ipranges/main/facebook/ipv4_merged.txt
-- IPv6: https://raw.githubusercontent.com/yoshigev/ipranges/main/facebook/ipv6.txt
-- IPv6 (merged): https://raw.githubusercontent.com/yoshigev/ipranges/main/facebook/ipv6_merged.txt
+- IPv4: https://raw.githubusercontent.com/audiocodes/ipranges/main/facebook/ipv4.txt
+- IPv4 (merged): https://raw.githubusercontent.com/audiocodes/ipranges/main/facebook/ipv4_merged.txt
+- IPv6: https://raw.githubusercontent.com/audiocodes/ipranges/main/facebook/ipv6.txt
+- IPv6 (merged): https://raw.githubusercontent.com/audiocodes/ipranges/main/facebook/ipv6_merged.txt
 
 ## About
 
