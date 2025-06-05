@@ -19,10 +19,6 @@ get_routes() {
 }
 
 get_routes 'AS32934' > /tmp/facebook.txt || echo 'failed'
-get_routes 'AS54115' >> /tmp/facebook.txt || echo 'failed'
-get_routes 'AS63293' >> /tmp/facebook.txt || echo 'failed'
-get_routes 'AS149642' >> /tmp/facebook.txt || echo 'failed'
-
 
 # save ipv4
 grep -v ':' /tmp/facebook.txt > /tmp/facebook-ipv4.txt
