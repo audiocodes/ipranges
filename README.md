@@ -25,7 +25,7 @@ All addresses are stored in `.txt` files with CIDRs, where each range is on a ne
 
 ## About
 
-This repo is a fork of [https://github.com/lord-alfred/ipranges].
+This repo is a fork of https://github.com/lord-alfred/ipranges.
 
 Changes from original repo:
 - Only list Meta addresses, and only AS32934 range.
