@@ -61,3 +61,11 @@ jobs:
           commit_author: "GitHub Actions Bot <github-actions[bot]@users.noreply.github.com>"
           push_options: "--force-with-lease"
           branch: ${{ github.ref_name }}
+
+      - name: Notify failed job
+        uses: jayqi/failed-build-issue-action@v1.2.0
+        if: failure()
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          label-name: "job-failed"
+          title-template: "Failed job: {{workflow}}"
