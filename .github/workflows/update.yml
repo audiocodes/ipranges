@@ -51,26 +51,11 @@ jobs:
           set -x
           find . -name ipv6.txt | sort -h | parallel --will-cite -j 1 echo "Merging '{}'"';'python utils/merge.py --source={} '|' sort -V '>' {.}_merged.txt
 
-      - name: Commit files
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-
-          git remote add github "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git pull github ${GITHUB_REF} --ff-only
-
-          # Get name & email from 1st commit (needs `fetch-depth: 0` in step `actions/checkout@v3`)
-          git config --local user.email "$(git log --format='%ae' --reverse | head -1)"
-          git config --local user.name "$(git log --format='%an' --reverse | head -1)"
-
-          # try commit
-          git add .
-          if [ -z "$(git status --porcelain)" ]; then
-            echo 'No changes'
-            exit 0
-          fi
-          git commit -m "[auto] Update ip ranges"
-
-          # push changes
-          git push github HEAD:${GITHUB_REF}
+      - name: Auto-commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "[auto] Update IP ranges"
+          commit_user_name: "GitHub Actions Bot"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          push_options: "--force-with-lease"
+          branch: ${{ github.ref_name }}
