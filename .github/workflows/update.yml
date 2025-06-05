@@ -58,5 +58,6 @@ jobs:
           commit_message: "[auto] Update IP ranges"
           commit_user_name: "GitHub Actions Bot"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "GitHub Actions Bot <github-actions[bot]@users.noreply.github.com>"
           push_options: "--force-with-lease"
           branch: ${{ github.ref_name }}
